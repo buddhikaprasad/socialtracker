@@ -1,7 +1,9 @@
 <template name="articleList">
     <div class="posts">
+    {{#if isUserLoggedIn }}
         {{#each articles}} 
         	{{> articleItem}} 
         {{/each}}
+    {{/if}}
     </div>
 </template>
