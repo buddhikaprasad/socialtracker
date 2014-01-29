@@ -1,6 +1,7 @@
 Template.articleList.helpers({
     articles: function() {
-        return ArticleList.find();
+        return ArticleList.find({}, {sort: {submitted: -1}}
+);
     }
 
 });

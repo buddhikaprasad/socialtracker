@@ -8,9 +8,9 @@ apse">
                 <span class="icon-bar"></span>
             </a>
             <a class="brand" href="{{pathFor 'articleList'}}">Social Tracker</a>
-
-            <a class="brand" href="{{pathFor 'addArticles'}}">Add Articles</a>
-
+            {{#if currentUser}}
+                <a class="brand" href="{{pathFor 'addArticles'}}">Add Articles</a>
+            {{/if}}
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
                     <li>{{loginButtons}}</li>

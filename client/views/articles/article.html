@@ -1,6 +1,6 @@
 <template name="articleList">
     <div class="posts">
-    {{#if isUserLoggedIn }}
+   {{#if currentUser}}
         {{#each articles}} 
         	{{> articleItem}} 
         {{/each}}
