@@ -1,0 +1,1 @@
+ArticleList = new Meteor.Collection('articles');
