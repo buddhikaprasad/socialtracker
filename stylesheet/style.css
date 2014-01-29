@@ -112,3 +112,15 @@ body {
     position:relative;
     transition:all 300ms 0ms ease-in;
 }
+
+#articlerepeat {
+	margin: 0;
+	padding: 0;
+	height: 1em; 
+}
+
+#articlerepeat li {
+	list-style: none;
+	float: left; 
+  padding: 3px 8px;
+}
