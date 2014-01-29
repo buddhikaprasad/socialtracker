@@ -1,3 +1,6 @@
 Template.articleList.helpers({
-    articles: articleData
+    articles: function() {
+        return ArticleList.find();
+    }
+
 });
