@@ -5,8 +5,25 @@ Template.category.helpers({
 
 		if( res == "Facebook"){
 			return "https://www.facebook.com/sharer/sharer.php?u=" + this.substring(res.length+3);
-
 		}
+    else if ( res == "Twitter" ){
+      return "http://twitter.com/share?text=&url=" + this.substring(res.length+3);
+    }
+    else if ( res == "G+" ){
+      return "https://plus.google.com/share?url=" + this.substring(res.length+3);
+    }
+    else if ( res == "Linkedin" ){
+      return "http://www.linkedin.com/shareArticle?mini=true&url=" + this.substring(res.length+3) + "&title=&summary=&source=";
+    }
+    else if ( res == "Pinterest" ){
+      return "done"
+    }
+    else if ( res == "Reddit" ){
+      return "http://reddit.com/submit?url=" + this.substring(res.length+3);
+    }
+    else if ( res == "Stumbleupon" ){
+      return "http://www.stumbleupon.com/submit?url=" + this.substring(res.length+3);
+    }
 	},
 
 	imageName: function() {
