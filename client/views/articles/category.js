@@ -51,7 +51,7 @@ Template.category.events({
 
         var array = arguments[1].data.split("-");
         var res = "#" + array[1].trim() +"-"+ array[2].trim();
-        console.log(res);
+        
         var newObject = jQuery.extend({}, array[1].trim());
        
        
@@ -70,12 +70,13 @@ Template.category.events({
 
           var tickedCategories = [];
           tickedCategories = post.categories;
+
           console.log( tickedCategories );
 
           tickedCategories.push( post.tickedCategories );
           var showArticle ;
           if(tickedCategories.length >= post.categories.length ) {
-            showArticle = false;
+            showArticle = 0;
           }
 
           var article = {            
