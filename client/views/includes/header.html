@@ -1,13 +1,13 @@
 <template name="header">
     <header class="navbar">
-        <div class="navbar-inner">
+        <div class="navbar-socialfire">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-coll
 apse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="{{pathFor 'articleList'}}">Social Fire</a>
+          <a class="logo" href="{{pathFor 'articleList'}}"><img src="images/SocialFireLogo100.png"></a>
             {{#if currentUser}}
                 <a class="brand" href="{{pathFor 'addArticles'}}">Add Articles</a>
             {{/if}}

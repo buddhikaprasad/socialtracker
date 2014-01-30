@@ -20,7 +20,7 @@ Meteor.methods({
             throw new Meteor.Error(422, 'Please insert a URL');
 
         // pick out the whitelisted keys
-        var post = _.extend(_.pick(postAttributes, 'url', 'repete', 'categories'), {
+        var post = _.extend(_.pick(postAttributes, 'url', 'title', 'repete', 'categories'), {
             creatorUserId: user._id,
             author: user.username,
             submitted: new Date().getTime(),
@@ -37,7 +37,7 @@ Meteor.methods({
         for (var i = 0; i < users.length; i++) {
         	console.log("hello world"); 
         	console.log(users[i]._id + " " + user._id); 
-            var userPost = _.extend(_.pick(postAttributes, 'url', 'repete', 'categories'), {
+            var userPost = _.extend(_.pick(postAttributes, 'url', 'title', 'repete', 'categories'), {
                 creatorUserId: user._id,
                 author: user.username,
                 submitted: new Date().getTime(),

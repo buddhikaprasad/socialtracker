@@ -1,5 +1,51 @@
+.navbar-socialfire {
+  min-height: 100px;
+  background-color: #E8F5EB;
+}
+
+.navbar .logo {
+  display: block;
+  float: left;
+  padding: 0px 20px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #777777;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+.navbar .brand {
+  display: block;
+  float: left;
+  padding: 40px 20px 10px;
+  margin-left: -20px;
+  font-size: 30px;
+  font-weight: 300;
+  color: #777777;
+  text-shadow: 0 1px 0 #ffffff;
+}
+.navbar-inner {
+  min-height: 100px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #2A2F2B;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #2A2F2B, #91EBBC);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);*/
+}
 .grid-block, .main, .post, .comments li, .comment-form {
-    background: #fff;
+    background: #91EBBC;
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 10px;
@@ -139,3 +185,5 @@ body {
   color: #777777;
   text-shadow: 0 1px 0 #ffffff;
 }
+
+

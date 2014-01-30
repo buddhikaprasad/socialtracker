@@ -1,7 +1,9 @@
 <template name="articleItem">
     <div class="post">
         <div class="post-content">
-            <h3><a style="float:left;" href="{{this.url}}">{{this.url}}</a>
+            <h3>
+              <p style="float:left;">{{this.title}}</p></br>
+              <a style="float:left;" href="{{this.url}}">{{this.url}}</a>
             	
                 {{#each categories }} 
 

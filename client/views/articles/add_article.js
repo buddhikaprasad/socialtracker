@@ -17,6 +17,7 @@ Template.addArticles.events({
 
         var article = {
             url: $(e.target).find('[name=url]').val(),
+            title: $(e.target).find('[name=title]').val(),
             repete: repete,
             categories: categories
         }

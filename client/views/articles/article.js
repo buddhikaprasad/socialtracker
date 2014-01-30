@@ -1,9 +1,6 @@
 Template.articleList.helpers({
-	hasMorePosts: function(){
+	hasMoreArticles: function(){
 		this.articles.rewind();
 		return Router.current().limit() == this.articles.fetch().length;
-
 	}
-
-
 });
