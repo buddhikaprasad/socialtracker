@@ -1,9 +1,17 @@
 <template name="category">
+{{#if isNotLink}}
     <div style="width:30px; float:left; margin-left:10px;text-align: center;">
-        <a style="margin-left:5px;" href="https://www.facebook.com/sharer/sharer.php?u={{this.url}}" target="_blank">
-            <img src="/images/{{this}}.png" />
+        
+        <a style="margin-left:5px;" href="{{fullUrl}}" target="_blank">
+            <img src="/images/{{imageName}}.png" />
         </a>
+        
 
         <input type="checkbox" value="{{this}}" id="{{this}}" />
+        
+
+
+
         <div>
+        {{/if}}
 </template>

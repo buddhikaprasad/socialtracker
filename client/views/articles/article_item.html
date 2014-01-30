@@ -2,7 +2,11 @@
     <div class="post">
         <div class="post-content">
             <h3><a style="float:left;" href="{{this.url}}">{{this.url}}</a>
-                {{#each categories }} {{> category}} {{/each}}
+
+                {{#each categories }} 
+                
+                	{{> category}} 
+                {{/each}}
             </h3>
             <p>
                 {{#if ownPost}}<a href="{{pathFor 'editArticles'}}">Edit Article</a>{{/if}}

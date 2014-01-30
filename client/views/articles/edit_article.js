@@ -1,14 +1,14 @@
 Template.editArticles.helpers({
     repeteNever: function() {
-        return _.contains(this.repete, 'never') ? 'checked' : '';
+        return (this.repete =='never') ? 'checked' : '';
     },
 
     repeteFrequently : function() {
-        return _.contains(this.repete, 'frequently') ? 'checked' : '';
+        return (this.repete =='frequently') ? 'checked' : '';
     },
 
     repeteNotFrequently : function() {
-        return _.contains(this.repete, 'notFrequently') ? 'checked' : '';
+        return  (this.repete == 'notFrequently') ? 'checked' : '';
     },
 
 
