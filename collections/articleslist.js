@@ -1,14 +1,13 @@
 ArticleList = new Meteor.Collection('articles');
 
 ArticleList.allow({
-    insert: function(userId, doc) {
-        // only allow posting if you are logged in
-        return !!userId;
-    }
+    update: ownsDocument,
+    remove: ownsDocument
 });
 
+
 Meteor.methods({
-    postArticle: function( postAttributes ) {
+    postArticle: function(postAttributes) {
         var user = Meteor.user(),
             postWithSameLink = ArticleList.findOne({
                 url: postAttributes.url
@@ -19,7 +18,7 @@ Meteor.methods({
         // ensure the post has a title
         if (!postAttributes.url)
             throw new Meteor.Error(422, 'Please insert a URL');
-       
+
         // pick out the whitelisted keys
         var post = _.extend(_.pick(postAttributes, 'url', 'repete', 'categories'), {
             userId: user._id,

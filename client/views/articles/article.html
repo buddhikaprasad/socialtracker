@@ -1,9 +1,13 @@
 <template name="articleList">
     <div class="posts">
-   {{#if currentUser}}
+   	{{#if currentUser}}
         {{#each articles}} 
         	{{> articleItem}} 
         {{/each}}
-    {{/if}}
+
+        {{/if}}
+        
+
+    
     </div>
 </template>
