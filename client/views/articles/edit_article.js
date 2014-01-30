@@ -72,7 +72,7 @@ Template.editArticles.events({
             }
         });
     },
-    'click .delete': function(e) {
+    'click .delete': function(e, Template) {
         e.preventDefault();
         if (confirm("Delete this post?")) {
             var currentArticleId = this._id;

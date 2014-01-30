@@ -1,7 +1,8 @@
 Template.category.helpers({
 	fullUrl: function(){
 		 var array = this.split("-");
-		 var res = array[0].trim();
+		 var res = array[2].trim();
+     console.log(res);
 
 		if( res == "Facebook"){
 			return "https://www.facebook.com/sharer/sharer.php?u=" + this.substring(res.length+3);
@@ -28,21 +29,40 @@ Template.category.helpers({
 
 	imageName: function() {
 		var array = this.split("-");
-		var res = array[0].trim();
+		var res = array[2].trim();
 		return res;
 	},
 
 	isNotLink : function() {
 		var res = this.substring(0,3);
 
-		if (res == "url"){
+		if (res == ""){
 			return false;
 		}
 
 		return true;
 	},
 
-
-
+  id : function () {
+    var array = this.split("-");
+     var res = array[1].trim() + array[2].trim();
+     console.log(res);
+     return res;
+  }
 });
 
+Template.category.events({
+
+    'click img': function(e) {
+    	console.log( arguments[1].data);
+    	console.log(this);
+    	console.log( arguments.data);
+      console.log(e.target);
+    var array = arguments[1].data.split("-");
+     var res = "#"+array[1].trim() + array[2].trim();
+     console.log(res);
+    	$(res).attr("checked",true);
+        
+    }
+
+});

@@ -5,19 +5,24 @@ Template.articleItem.helpers({
 
     categories: function() {
 
-    	var x = [];
+    	
     	var obj = {};
 
     	for(i = 0 ; i < this.categories.length ; i++) {
     		
-        	obj[ this.categories[i] ] = this.categories[i] + " - " + this.url;
+        	obj[ this.categories[i] ] = "_id - "+ this._id +" - "+ this.categories[i] + " - " + this.url;
         	
     	}
+
+    	var l = Object.keys(obj).length;
+
 
 
         var array = $.map( obj, function(value, index) {
             return [value];
         });
+
+       
         return array;
         
 
