@@ -124,3 +124,18 @@ body {
 	float: left; 
   padding: 3px 8px;
 }
+
+.logo {
+  display: block;
+  float: left;
+}
+
+.nav-link {
+  display: block;
+  float: left;
+  padding: 50px 50px 10px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #777777;
+  text-shadow: 0 1px 0 #ffffff;
+}
