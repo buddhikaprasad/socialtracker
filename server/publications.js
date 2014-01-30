@@ -1,3 +1,4 @@
-Meteor.publish('articles', function() {
-	return ArticleList.find();
+Meteor.publish('articles', function(user) {
+
+  return ArticleList.find();
 });

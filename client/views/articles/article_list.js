@@ -1,6 +1,8 @@
 Template.articleList.helpers({
     articles: function() {
-        return ArticleList.find({}, {sort: {submitted: -1}}
+        var user = Meteor.user()
+
+        return ArticleList.find({userId:user._id},{sort: {submitted: -1}}
 );
     }
 

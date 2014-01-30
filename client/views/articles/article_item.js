@@ -1,6 +1,6 @@
 Template.articleItem.helpers({
     ownPost: function() {
-        return this.userId == Meteor.userId();
+        return this.creatorUserId == Meteor.userId();
     },
 
     categories: function() {
@@ -14,17 +14,12 @@ Template.articleItem.helpers({
         	
     	}
 
-    	
-        
-		_.extend({
-            url: this.url
-        }, this.categories)
 
         var array = $.map( obj, function(value, index) {
             return [value];
         });
         return array;
-        console.log(array);
+        
 
 
 
