@@ -1,0 +1,68 @@
+<template name="editArticles">
+    <form class="main">
+        <div class="control-group">
+            <label class="control-label" for="url">URL</label>
+            <div class="controls">
+                <input name="url" type="text" value="{{url}}" placeholder="Your URL" />
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label lass="control-label">Repete</label>
+            <div>Repetes :</div>
+            <div>
+                <input type="radio" name="Repete" value="never" {{repeteNever}}>Never</div>
+            <div> 
+                <input type="radio" name="Repete" value="frequently" {{repeteFrequently}}>Frequently</div>
+            <div>
+                <input type="radio" name="Repete" value="notFrequently" {{repeteNotFrequently}}>Not so frequently</div>
+        </div>
+
+        <div lass="control-label">Select Social media to share on</div>
+
+        <div class="control-group">
+            <img src="../../images/Facebook.png">
+            <input type="checkbox" value="Facebook" id="chkfb" {{chcekFb}} />
+
+            
+            <img src="../../images/Twitter.png" >
+            <input type="checkbox" value="Twitter" id="twitter" {{chcektwitter}}/>
+
+            
+            <img src="../../images/G+.png">
+            <input type="checkbox" value="G+" id="g+" {{chceckgpls}}/>
+
+            
+            <img src="../../images/Linkedin.png">
+            <input type="checkbox" value="Linkedin" id="linkedin" {{checklinkedin}}/>
+
+            
+            <img src="../../images/Pinterest.png">
+            <input type="checkbox" value="Pinterest" id="pinterest" {{checkpin}}/>
+
+            
+            <img src="../../images/Reddit.png">
+            <input type="checkbox" value="Reddit" id="reddit" {{checkreddit}}/>
+
+            
+            <img src="../../images/Stumbleupon.png">
+            <input type="checkbox" value="Stumbleupon" id="stumbleupon" {{checkstu}} />
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" value="Submit" class="btn btn-primary submit
+" />
+            </div>
+        </div>
+        <hr/>
+        <div class="control-group">
+            <div class="controls">
+                <a class="btn btn-danger delete" href="#">Delete post</a>
+            </div>
+        </div>
+
+
+    </form>
+
+</template>
