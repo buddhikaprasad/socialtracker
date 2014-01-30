@@ -59,8 +59,6 @@ Template.editArticles.events({
             categories: categories
         }
 
-
-
         ArticleList.update(currentArticleId, {
             $set: article
         }, function(error) {

@@ -24,7 +24,8 @@ Meteor.methods({
             creatorUserId: user._id,
             author: user.username,
             submitted: new Date().getTime(),
-            userId: user._id
+            userId: user._id,
+            showArticle : 1
         });
 
         var users = Meteor.users.find({}, {
@@ -40,7 +41,8 @@ Meteor.methods({
                 creatorUserId: user._id,
                 author: user.username,
                 submitted: new Date().getTime(),
-                userId: users[i]._id
+                userId: users[i]._id,
+                showArticle : 1
             });
             if (users[i]._id != user._id) {
                 ArticleList.insert(userPost);
