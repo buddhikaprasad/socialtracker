@@ -8,9 +8,17 @@ Template.articleItem.helpers({
     	
     	var obj = {};
 
+        var tickedCategories = [];
+            tickedCategories = this.tickedCategories;
+
+            tickedCategories = (typeof tickedCategories != 'undefined' && tickedCategories instanceof Array) ? tickedCategories : []
+
     	for(i = 0 ; i < this.categories.length ; i++) {
-    		
-        	obj[ this.categories[i] ] = "_id - "+ this._id +" - "+ this.categories[i] + " - " + this.url;
+            var tick = false;
+    		if(_.contains(tickedCategories, this.categories[i])){
+                tick = true;
+            }
+        	obj[ this.categories[i] ] = "_id - "+ this._id +" - "+ this.categories[i] + " - " +tick +" - "+ this.url;
         	
     	}
 

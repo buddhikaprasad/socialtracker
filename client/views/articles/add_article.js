@@ -2,7 +2,7 @@ Template.addArticles.events({
     'submit form': function(e) {
         e.preventDefault();
         var repete;
-        $('input[name=Repete]:checked').each(function() {
+        $('input[name=Repeat]:checked').each(function() {
             repete = ($(this).val());
         });
 

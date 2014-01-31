@@ -1,5 +1,8 @@
 Template.editArticles.helpers({
+
+
     repeteNever: function() {
+        
         return (this.repete =='never') ? 'checked' : '';
     },
 
@@ -21,7 +24,7 @@ Template.editArticles.helpers({
     },
 
     chceckgpls: function() {
-        return _.contains(this.categories, 'G+') ? 'checked' : '';
+        return _.contains(this.categories, 'Gplus') ? 'checked' : '';
     },
 
     checklinkedin: function() {
@@ -44,7 +47,7 @@ Template.editArticles.events({
         e.preventDefault();
         var currentArticleId = this._id;
         var repete;
-        $('input[name=Repete]:checked').each(function() {
+        $('input[name=Repeat]:checked').each(function() {
             repete = ($(this).val());
         });
 

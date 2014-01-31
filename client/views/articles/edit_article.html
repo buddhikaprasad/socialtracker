@@ -3,11 +3,11 @@
         <div class="control-group">
             <label class="control-label" for="url">URL</label>
             <div class="controls">
-                <input name="url" type="text" value="" placeholder="Your URL" />
+                <input name="url" type="text" value="{{this.url}}" placeholder="Your URL" />
             </div>
             <label class="control-label" for="title">Title</label>
             <div class="controls">
-                <input name="title" type="text" value="" placeholder="Link Title" />
+                <input name="title" type="text" value="{{this.title}}" placeholder="Link Title" />
             </div>
         </div>
 
@@ -15,9 +15,9 @@
 
             <ul id="articlerepeat">
               <li><b>Repeat: </b></li>
-              <li><input type="radio" name="Repeat" value="never"> Never</li>
-        	    <li><input type="radio" name="Repeat" value="frequently"> Frequently</li>
-        	    <li><input type="radio" name="Repeat" value="notFrequently"> Not so frequently</li>
+              <li><input type="radio" name="Repeat" value="never" {{repeteNever}}> Never</li>
+        	    <li><input type="radio" name="Repeat" value="frequently" {{repeteFrequently}}> Frequently</li>
+        	    <li><input type="radio" name="Repeat" value="notFrequently" {{repeteNotFrequently}}> Not so frequently</li>
             </ul>
         </div>
         </br>
@@ -32,8 +32,8 @@
             <input type="checkbox" value="Twitter" id="twitter" {{chcektwitter}}/>
 
             
-            <img src="../../images/G+.png">
-            <input type="checkbox" value="G+" id="g+" {{chceckgpls}}/>
+            <img src="../../images/Gplus.png">
+            <input type="checkbox" value="Gplus" id="Gplus" {{chceckgpls}}/>
 
             
             <img src="../../images/Linkedin.png">

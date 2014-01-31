@@ -5,7 +5,8 @@
       "iron-router": {},
       "spin": {},
       "accounts-ui-bootstrap-dropdown": {},
-      "facebook-sdk": {}
+      "facebook-sdk": {},
+      "iron-router-progress": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/hugesuccess/facebook-sdk.git",
         "tag": "v0.0.22",
         "commit": "05fba3b342f3bc714ef68700e8e9ceeb46e694c7"
+      },
+      "iron-router-progress": {
+        "git": "https://github.com/Multiply/iron-router-progress.git",
+        "tag": "v0.2.0",
+        "commit": "ce730d1d26feadb7c75ea25f22c5bfdb0c549a8b"
       }
     }
   }

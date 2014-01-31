@@ -2,13 +2,14 @@ Template.category.helpers({
     fullUrl: function() {
         var array = this.split("-");
         var res = array[2].trim();
-        console.log(res);
+        var tmp = array[0]+array[1]+array[2]+array[3];
+
 
         if (res == "Facebook") {
-            return "https://www.facebook.com/sharer/sharer.php?u=" + this.substring(res.length + 3);
+            return "https://www.facebook.com/sharer/sharer.php?u=" + this.substring(tmp.length);
         } else if (res == "Twitter") {
             return "http://twitter.com/share?text=&url=" + this.substring(res.length + 3);
-        } else if (res == "G+") {
+        } else if (res == "Gplus") {
             return "https://plus.google.com/share?url=" + this.substring(res.length + 3);
         } else if (res == "Linkedin") {
             return "http://www.linkedin.com/shareArticle?mini=true&url=" + this.substring(res.length + 3) + "&title=&summary=&source=";
@@ -39,9 +40,20 @@ Template.category.helpers({
 
     id: function() {
         var array = this.split("-");
-        var res = array[1].trim() +"-"+ array[2].trim();
-        console.log(res);
+        var res = array[1].trim() + "-" + array[2].trim();
+
         return res;
+    },
+
+    isChecked: function() {
+        var array = this.split("-");
+        var res = array[3].trim();
+        if (res == "true") {
+            return "checked";
+        }
+        //console.log(res)
+        return "";
+
     }
 });
 
@@ -50,56 +62,66 @@ Template.category.events({
     'click img': function(e) {
 
         var array = arguments[1].data.split("-");
-        var res = "#" + array[1].trim() +"-"+ array[2].trim();
-        
+        var res = "#" + array[1].trim() + "-" + array[2].trim();
+
         var newObject = jQuery.extend({}, array[1].trim());
-       
-       
+
         $(res).attr("checked", true);
+
+
 
         var selected = new Array();
         $('input:checked').each(function() {
-        selected.push($(this).attr('id'));
+            selected.push($(this).attr('id'));
 
-});
+        });
 
         for (var i = 0; i < selected.length; i++) {
-          var chk = selected[i].split("-");
+            var chk = selected[i].split("-");
 
-          post = ArticleList.findOne({_id: chk[0]});
+            post = ArticleList.findOne({
+                _id: chk[0]
+            });
 
-          var tickedCategories = [];
-          tickedCategories = post.categories;
+//            console.log(chk[0]);
+//            console.log(post);
 
-          console.log( tickedCategories );
+            var tickedCategories = [];
+            tickedCategories = post.tickedCategories;
 
-          tickedCategories.push( post.tickedCategories );
-          var showArticle ;
-          if(tickedCategories.length >= post.categories.length ) {
-            showArticle = 0;
-          }
+            tickedCategories = (typeof tickedCategories != 'undefined' && tickedCategories instanceof Array) ? tickedCategories : [];
+            //console.log(tickedCategories);
 
-          var article = {            
-            tickedCategories: tickedCategories,
-            showArticle: showArticle
-        }
-
-        ArticleList.update( chk[0], {
-            $set: article
-        }, function(error) {
-            if (error) {
-                // display the error to the user
-                throwError(error.reason);
-            } else {
-                
+            if (_.contains(tickedCategories, chk[1]) == false) {
+                tickedCategories.push(chk[1]);
             }
-        });
+            //console.log(tickedCategories);
+
+            var showArticle;
+            if (tickedCategories.length >= post.categories.length) {
+                showArticle = 0;
+            }
+
+            var article = {
+                tickedCategories: tickedCategories,
+                showArticle: showArticle
+            }
+
+            ArticleList.update(chk[0], {
+                $set: article
+            }, function(error) {
+                if (error) {
+                    // display the error to the user
+                    throwError(error.reason);
+                } else {
+
+                }
+            });
 
 
 
 
         };
-        console.log(post);
 
 
     }
